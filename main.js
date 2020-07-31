@@ -1,10 +1,13 @@
 module.exports = require('./node_modules/fuzzyset/lib/fuzzyset.js');
+const a = require('./config.json'); 
+const token = a.token;
+const apiKey = a.key;
 const Discord = require('discord.js');
 
 const Client = new Discord.Client();
 
 const fetch = require('cross-fetch'); 
-const apiKey = '0ac087e2-9080-449f-8045-67e6aa42e13e';
+
 
 var itemlookup = FuzzySet();
 var nameToID = {}; // convert a name to an ID
@@ -79,4 +82,4 @@ fetch(hypixelapi + 'skyblock/auctions?key=' + apiKey + '&page=' + pg).then(funct
 });
 
 
-Client.login('NzM3Mzg4NDM3NDE3NDkyNjYx.Xx8ofw.B_Zv8M3wj3p8SkQgZ8TlxcpYXao');
+Client.login(token);
